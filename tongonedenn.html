@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính tổng từ 1 đến n</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-size: 18px;
+            font-family: Arial, sans-serif;
+        }
+        input, button {
+            font-size: 18px;
+        }
+        a {
+            color: lightblue;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function tinhTong(n) {
+            let tong = 0;
+            for (let i = 1; i <= n; i++) {
+                tong += i;
+            }
+            return tong;
+        }
+
+        function thucHienTinhToan() {
+            let n = parseInt(document.getElementById('nValue').value);
+            document.getElementById('ketQua').innerText = "Tổng từ 1 đến " + n + ": " + tinhTong(n);
+        }
+    </script>
+</head>
+<body>
+    <h1>Tính tổng từ 1 đến n</h1>
+    
+    <label for="nValue">Nhập n:</label>
+    <input type="number" id="nValue" value="10">
+    <br><br>
+
+    <button onclick="thucHienTinhToan()">Tính toán</button>
+    
+    <h3>Kết quả:</h3>
+    <p id="ketQua"></p>
+
+    <a href="tinhTongChan.html">Chuyển đến trang tính tổng số chẵn</a>
+    <br>
+    <a href="tinhTongLe.html">Chuyển đến trang tính tổng số lẻ</a>
+</body>
+</html>
